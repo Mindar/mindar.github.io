@@ -2,17 +2,15 @@
 <html>
 	<head>
 		<title>Patch Antenna</title>
-		<script src="./script.js" type="text/javascript"></script>
+		<script src="./antenna.js" type="text/javascript"></script>
 		<link rel="stylesheet" type="text/css" href="../style.css">
 	</head>
 	<body>
 		<canvas id="canv" width="600" height="600"></canvas>
 		<h3>Wtf is this?</h3>
 		<p>
-			This is a simulation of a 'Patch Antenna' consisting of 5 small, omnidirectional antennas. The purpose of this simulation is to visualize how a patch antenna works. You can clearly see how there is a very strong radio wave in the middle (that bright, striped section). This part is called the 'main lobe' in antenna-speak. You can also see some not quite as bright areas next to the main lobe. These areas are called 'side lobes'. Usually you want the side lobes to be as weak as possible<sup>1</sup>, because they 'steal' energy from the main lobe.
-		</p>
-		<p>
-			<sup>1</sup>at least for directional antennas such as the big radar dishes you've probably seen at some point
+			This is a simulation of a 'Patch Antenna' or 'Phased Array Antenna' consisting of 5 small, omnidirectional antennas. Such a collection of antennas is sometimes called '<em>Array</em>'. The purpose of this simulation is to visualize how such an antenna works. You can clearly see how there is a very strong radio wave in the middle (that bright, striped section). This part is called the 'main lobe' in antenna-speak. The main lobe is the useful part, since it's directly aimed at the target. In other words, if you want to build a directonal antenna, you want most of the energy to go towards the main lobe (and therefore towards your target). 
+			Next to the main lobe you can see some not-quite-as-bright areas. These are called 'side lobes'. Usually these should be kept as small or as weak as possible, since they 'steal' energy from the main lobe. So far these things can be achieved with a normal parabolic antenna as well. However phased array antennas have one significant advantage over 'normal' directional antennas: They can move their main lobe without physically moving the antenna. Try it out by moving your Cursor in the canvas. They do this by shifting the phase of each small antenna (that's why they're called <em>Phased</em> Array Antenna). Since phase shifting is a lot faster than physically moving an object, they can scan an area a lot faster than conventional antennas.
 		</p>
 	</body>
 </html>
