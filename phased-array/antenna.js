@@ -2,12 +2,12 @@ window.onload = init;
 
 
 // Display Settings
-const timescale = -5 * 1/1e6;
+const timescale =  1/1e4;
 
 
 // Simulation Settings
 const c = 1e4; // 300 000 km/s 3e8
-const f = 2.4e3; //Hz == 2.4Ghz 2.4e9
+const f = 1.5e3;//2.4e3; //Hz == 2.4Ghz 2.4e9
 const lambda = c / f;
 
 
@@ -28,7 +28,7 @@ function init(){
 	ctx.fillRect(0, 0, canv.width, canv.height);
 
 	antenna.senders = 7;
-	antenna.senderDistance = 2.8; //px
+	antenna.senderDistance = 4.5; //px
 	antenna.pos = {x: 5, y: 100}
 	antenna.angle = 0;
 
@@ -48,9 +48,12 @@ function updateDistance(e){
 	console.log(antenna.senderDistance);
 }
 
+let dt = 0;
+
 function simStep(){
 	let curTime = new Date();
-	let dt = curTime - startTime;
+	//let dt = curTime - startTime;
+	dt += 1;
 	antenna.phases = calcPhases();
 
 	let field = calcField(dt);
